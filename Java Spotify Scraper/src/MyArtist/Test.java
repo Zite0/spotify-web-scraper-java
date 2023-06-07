@@ -79,6 +79,7 @@ public class Test {
             throw new RuntimeException(e);
         } catch (SpotifyWebApiException e) {
             throw new RuntimeException(e);
+            // hello hello
         }
     }
 
