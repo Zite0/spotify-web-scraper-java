@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="Libraries">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Libraries/spotify-web-api-java-8.0.0.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>
