@@ -6,7 +6,7 @@ import java.util.*;
  * MyArtist class, which represents an individual artist with data scraped using the Spotify
  * Web API project. The class was originally implemented by michelle-mrz on the Spotify Web
  * Scraper project. The class is named like so to avoid confusion with the one provided by
- * the Spotify Web API utility. The decision to make this extra class was for simplicity, as much
+ * the Spotify Web API utility. The decision to make this extra class was for simplicity, as much of
  * what is provided by the aforementioned library is useful yet unnecessary for our purposes.
 */
 public class MyArtist {
@@ -18,6 +18,7 @@ public class MyArtist {
      * A final String containing the artist's name.
      */
     private final String name;
+
 
     /**
      * A final String (or int) that represents the artist's unique id used by Spotify.
@@ -42,6 +43,9 @@ public class MyArtist {
         // TODO: Implement constructor
         name = null;
         id = null;
+        int y = 0;
+
+
     }
 
 

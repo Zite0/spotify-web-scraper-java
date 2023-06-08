@@ -10,8 +10,10 @@ import se.michaelthelin.spotify.model_objects.special.SearchResult;
 import se.michaelthelin.spotify.model_objects.specification.Album;
 import se.michaelthelin.spotify.model_objects.specification.AlbumSimplified;
 import se.michaelthelin.spotify.model_objects.specification.Paging;
+import se.michaelthelin.spotify.model_objects.specification.TrackSimplified;
 import se.michaelthelin.spotify.requests.authorization.client_credentials.ClientCredentialsRequest;
 import se.michaelthelin.spotify.requests.data.albums.GetAlbumRequest;
+import se.michaelthelin.spotify.requests.data.albums.GetAlbumsTracksRequest;
 import se.michaelthelin.spotify.requests.data.artists.GetArtistsAlbumsRequest;
 import se.michaelthelin.spotify.requests.data.search.SearchItemRequest;
 import se.michaelthelin.spotify.requests.data.search.simplified.SearchArtistsRequest;
@@ -41,7 +43,7 @@ public class Test {
 
 
 
-        final SearchItemRequest searchItemRequest = spotifyApi.searchItem("arctic monkeys",
+        final SearchItemRequest searchItemRequest = spotifyApi.searchItem("banda el recodo",
                         ModelObjectType.ARTIST.getType())
           .market(CountryCode.US)
           .limit(1)
@@ -59,13 +61,31 @@ public class Test {
 
             final GetArtistsAlbumsRequest albumRequest = spotifyApi.getArtistsAlbums(id)
                     .market(CountryCode.US)
+                    .album_type(ModelObjectType.ALBUM.getType())
                     .build();
 
 
             Paging<AlbumSimplified> albums = albumRequest.execute();
 
-            for (AlbumSimplified album : albums.getItems()){
-                System.out.println(album.getName());
+            AlbumSimplified[] list = albums.getItems();
+
+            AlbumSimplified thisAlbum = list[0];
+
+            String thisAlbumId = thisAlbum.getId();
+            System.out.println("Album was released in " + thisAlbum.getReleaseDate());
+
+            GetAlbumsTracksRequest tracksRequest = spotifyApi.getAlbumsTracks(thisAlbumId)
+                    .market(CountryCode.US)
+                    .limit(20)
+                    .build();
+
+
+            Paging<TrackSimplified> MyPagingTracks = tracksRequest.execute();
+
+            TrackSimplified[] listOfTracks = MyPagingTracks.getItems();
+
+            for (TrackSimplified track : listOfTracks){
+                System.out.println(track.getName());
             }
 
 
@@ -84,14 +104,14 @@ public class Test {
     }
 
     public static void main(String[] args){
-        String[] array = {"hello","hello","hello"};
-
-        for (String myString : array){
-            myString = "world";
-        }
-
-        for (String myString : array){
-            System.out.println(myString);
+        try {
+            search();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        } catch (SpotifyWebApiException e) {
+            throw new RuntimeException(e);
         }
     }
 

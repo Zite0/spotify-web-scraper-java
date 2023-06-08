@@ -19,10 +19,11 @@ class MyAlbum{
     /** Release date of this album, stored as Date object. */
     private final Date releaseDate = null;
 
-    /** String array containing the tracks of this album, ordered in the same way as they are in
-     * Spotify. */
+    /** String array containing the tracks of this album, ordered in the same way they appear
+     * in Spotify. */
     private final String[] tracks = null;
 
+    /** This album's title.*/
     private final String title = "";
 
     // TODO: implement constructor
