@@ -1,8 +1,7 @@
 package MyArtist;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Iterator;
+import java.util.Calendar;
 import java.util.List;
+import se.michaelthelin.spotify.SpotifyApi;
 
 // TODO: Implement class
 
@@ -17,7 +16,10 @@ class MyAlbum{
     private final String id = "";
 
     /** Release date of this album, stored as Date object. */
-    private final Date releaseDate = null;
+    private final Calendar releaseDate = null;
+
+    /** The number of songs on this album, a positive integer less than 30.*/
+    private int size;
 
     /** String array containing the tracks of this album, ordered in the same way they appear
      * in Spotify. */
@@ -27,12 +29,27 @@ class MyAlbum{
     private final String title = "";
 
     // TODO: implement constructor
-    protected MyAlbum(){
+    protected MyAlbum(String id, SpotifyApi api){
         int x =2;
     }
 
     /** Returns a String array with the tracks of this album. */
     public String[] getTracks(){
         return tracks;
+    }
+
+    /** Returns this album's title.*/
+    public String getTitle(){
+        return title;
+    }
+
+    /** Returns this album's id.*/
+    public String getId(){
+        return id;
+    }
+
+    /** Returns the number of tracks on this album.*/
+    public int getSize(){
+        return size;
     }
 }

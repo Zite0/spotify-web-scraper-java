@@ -1,4 +1,5 @@
 package MyArtist;
+import SpecialExceptions.NoResultException;
 import com.neovisionaries.i18n.CountryCode;
 import java.io.IOException;
 import org.apache.hc.core5.http.ParseException;
@@ -43,13 +44,13 @@ public class Test {
 
 
 
-        final SearchItemRequest searchItemRequest = spotifyApi.searchItem("banda el recodo",
+        final SearchItemRequest searchItemRequest = spotifyApi.searchItem("ojnsdijanpsd",
                         ModelObjectType.ARTIST.getType())
           .market(CountryCode.US)
           .limit(1)
 //          .offset(0)
 //          .includeExternal("audio")
-            .build();
+         .build();
 
 
 
@@ -104,15 +105,7 @@ public class Test {
     }
 
     public static void main(String[] args){
-        try {
-            search();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        } catch (SpotifyWebApiException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NoResultException("hello hello ");
     }
 
 }
