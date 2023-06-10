@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f14100f-f8fc-45ed-968c-cc02f2e952f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MySingle.java" afterDir="false" />
+    <list default="true" id="83955593-e83f-4abc-b631-4629dada4c2c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/libraries/Libraries.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/libraries/se_michaelthelin_spotify_web_api_java.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyArtist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/tests/MyArtistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/tests/MyArtistTest.java" afterDir="false" />
@@ -15,94 +19,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QyUtsgG93SCzCLuisHfrPpoIPZ" />
+  <component name="ProjectId" id="2QznjWeS0nioFtDaColq9WLOrLz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/luis2/OneDrive/Documentos/GitHub/spotify-web-scraper-java",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MyArtistTest.artistTest">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyArtist.Test" />
-      <module name="spotify-web-scraper-java" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MyArtist.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyArtistTest.albumsTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="spotify-web-scraper-java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArtistTest" />
-      <option name="METHOD_NAME" value="albumsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyArtistTest.artistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotify-web-scraper-java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArtistTest" />
-      <option name="METHOD_NAME" value="artistTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.MyArtistTest.albumsTest" />
-      <item itemvalue="JUnit.MyArtistTest.artistTest" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.MyArtistTest.artistTest" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3f14100f-f8fc-45ed-968c-cc02f2e952f4" name="Changes" comment="" />
-      <created>1686325538262</created>
+      <changelist id="83955593-e83f-4abc-b631-4629dada4c2c" name="Changes" comment="" />
+      <created>1686365420299</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1686325538262</updated>
+      <updated>1686365420299</updated>
     </task>
     <servers />
   </component>

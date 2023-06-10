@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Java Spotify Scraper.iml" filepath="$PROJECT_DIR$/Java Spotify Scraper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spotify-web-scraper-java.iml" filepath="$PROJECT_DIR$/spotify-web-scraper-java.iml" />
     </modules>
   </component>
 </project>

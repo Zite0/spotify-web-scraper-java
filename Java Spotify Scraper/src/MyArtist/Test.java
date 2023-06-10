@@ -58,7 +58,11 @@ public class Test {
         try {
 
             SearchResult result = searchItemRequest.execute();
+            Artist[] artistList = result.getArtists().getItems();
+            System.out.println(artistList.length);
+
             String id = result.getArtists().getItems()[0].getId();
+
 
             final GetArtistsAlbumsRequest albumRequest = spotifyApi.getArtistsAlbums(id)
                     .market(CountryCode.US)
@@ -92,8 +96,6 @@ public class Test {
 
 
 
-
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ParseException e) {
@@ -105,7 +107,16 @@ public class Test {
     }
 
     public static void main(String[] args){
-        throw new NoResultException("hello hello ");
+        try {
+
+            search();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        } catch (SpotifyWebApiException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
