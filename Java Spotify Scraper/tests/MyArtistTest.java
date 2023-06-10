@@ -4,8 +4,12 @@ import MyArtist.MyArtist;
 
 import SpecialExceptions.NoResultException;
 import org.junit.jupiter.api.Test;
+import se.michaelthelin.spotify.SpotifyApi;
 
 public class MyArtistTest {
+
+    /** SpotifyApi object to be used for testing.*/
+    static SpotifyApi api;
 
     @Test
     void albumsTest(){

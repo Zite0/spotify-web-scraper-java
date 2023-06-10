@@ -39,7 +39,7 @@ public class MyArtist {
 
     /**
      * Albums object that contains an artist's albums and the year they were released, as well the
-     * songs on each album.
+     * songs on each album. Albums are limited to those released in the US.
      */
     // TODO: employ APIs capabilities to fetch multiple albums at the same time.
     private MyAlbum[] albums;
@@ -61,10 +61,29 @@ public class MyArtist {
      */
     private static final String CLIENT_ID = System.getenv("SP_USER");
 
+    /** MyArtist constructor. Takes string 'clientArtistName', which should be
+     *  used in non-concurrent instantiation, as it constructs a SpotifyApi
+     * object for every method call. Refer to the other constructor for a concurrent friendly
+     * implementation.
+     * @throws NoResultException if the user entered a meaningless string, such as 'asdasd'.
+     * @param clientArtistName The name of an artist to be searched on the Spotify API
+     *  */
     public MyArtist(String clientArtistName) {
         this.setAPI();
         this.searchArtist(clientArtistName);
         this.setAlbums();
+    }
+
+    /** A concurrent implementation of MyArtist construction because it allows for instantiation of
+     * multiple artists with the same SpotifyApi object.
+     * @param clientArtistName the name of the artist to be searched.
+     * @param api a SpotifyApi that has already been instantiated and is ready to be used for
+     * requests. See the spotify-web-api-java library to see how to do this.
+     */
+    public MyArtist(String clientArtistName, SpotifyApi api){
+        spotifyApi = api;
+        searchArtist(clientArtistName);
+        setAlbums();
     }
 
     /**

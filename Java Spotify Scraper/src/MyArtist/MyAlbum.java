@@ -1,7 +1,11 @@
 package MyArtist;
+import com.neovisionaries.i18n.CountryCode;
 import java.util.Calendar;
 import java.util.List;
 import se.michaelthelin.spotify.SpotifyApi;
+import se.michaelthelin.spotify.enums.ModelObjectType;
+import se.michaelthelin.spotify.requests.data.albums.GetAlbumsTracksRequest;
+import se.michaelthelin.spotify.requests.data.artists.GetArtistsAlbumsRequest;
 
 // TODO: Implement class
 
@@ -13,7 +17,7 @@ import se.michaelthelin.spotify.SpotifyApi;
 class MyAlbum{
 
     /** String containing the id 'id' of this album. */
-    private final String id = "";
+    private final String id;
 
     /** Release date of this album, stored as Date object. */
     private final Calendar releaseDate = null;
@@ -28,9 +32,26 @@ class MyAlbum{
     /** This album's title.*/
     private final String title = "";
 
-    // TODO: implement constructor
-    protected MyAlbum(String id, SpotifyApi api){
-        int x =2;
+    /** The type of this album, according to the SpotifyAPI doc. Other types are specified in
+     * one of the spotify-web-api-java classes.*/
+    private String albumType;
+
+    /**
+     * SpotifyApi object provided by the same library, used for getting data from Spotify.
+     * Not instantiated in this object but passed as an argument in the constructor.
+     */
+    private final SpotifyApi spotifyApi;
+
+    /** Constructor of MyAlbum method.
+     * @param id Unique id of this album, as found in the official Spotify API.
+     * @param api Initialized object, used to make requests to the Spotify API.
+     * @param albumType The unique id of this album, provided by the Spotify API.
+     *
+     */
+    protected MyAlbum(String id, SpotifyApi api,String albumType){
+        this.id = id;
+        spotifyApi = api;
+        this.albumType = albumType;
     }
 
     /** Returns a String array with the tracks of this album. */
@@ -52,4 +73,15 @@ class MyAlbum{
     public int getSize(){
         return size;
     }
+
+    /**
+     * Requests this album's tracks and sets the 'tracks' field.
+     */
+    private void searchAlbum(){
+        // Instantiates a GetArtistsAlbumsRequest to get
+        GetAlbumsTracksRequest tracksRequest = spotifyApi.getAlbumsTracks(id)
+                .market(CountryCode.US)
+                .limit();
+    }
 }
+
