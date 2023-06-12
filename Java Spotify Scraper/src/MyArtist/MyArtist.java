@@ -26,22 +26,16 @@ public class MyArtist {
     //TODO: find a way to minimize number of requests made to the API/ figure out a way
     // to use multiple client ids/secrets to be able to make more requests.
 
-    /**
-     * A final String containing the artist's name.
-     */
+    /** A final String containing the artist's name. */
     private String name;
 
-
-    /**
-     * A String that represents this artist's unique id used by Spotify.
-     */
+    /** A String that represents this artist's unique id used by Spotify. */
     private String id;
 
     /**
      * Albums object that contains an artist's albums and the year they were released, as well the
      * songs on each album. Albums are limited to those released in the US.
      */
-    // TODO: employ APIs capabilities to fetch multiple albums at the same time.
     private MyAlbum[] albums;
 
     /**
@@ -64,25 +58,28 @@ public class MyArtist {
     /** MyArtist constructor. Takes string 'clientArtistName', which should be
      *  used in non-concurrent instantiation, as it constructs a SpotifyApi
      * object for every method call. Refer to the other constructor for a concurrent friendly
-     * implementation.
+     * implementation. Requires that the environment variables 'SP_USER' and 'SP_PASS' be set to
+     * valid a valid client ID and secret. Use only for immediate testing and rapid results.
      * @throws NoResultException if the user entered a meaningless string, such as 'asdasd'.
      * @param clientArtistName The name of an artist to be searched on the Spotify API
      *  */
     public MyArtist(String clientArtistName) {
-        this.setAPI();
-        this.searchArtist(clientArtistName);
-        this.setAlbums();
+        setAPI();
+        searchArtist(clientArtistName);
+        setAlbums();
     }
 
     /** A concurrent implementation of MyArtist construction because it allows for instantiation of
-     * multiple artists with the same SpotifyApi object.
-     * @param clientArtistName the name of the artist to be searched.
+     * multiple artists with the same SpotifyApi object. Fetching multiple artist's id and their
+     * information is to be done using a class that requests multiple artists at the same time.
+     * @param id the unique id of this artist.
      * @param api a SpotifyApi that has already been instantiated and is ready to be used for
      * requests. See the spotify-web-api-java library to see how to do this.
      */
-    public MyArtist(String clientArtistName, SpotifyApi api){
+    public MyArtist(String id, SpotifyApi api, String name){
         spotifyApi = api;
-        searchArtist(clientArtistName);
+        this.id = id;
+        this.name = name;
         setAlbums();
     }
 
@@ -143,8 +140,7 @@ public class MyArtist {
         } catch (IOException | SpotifyWebApiException | ParseException e) {
             throw new RuntimeException(e);
         }
-
-
+        
     }
 
     /**
@@ -174,12 +170,23 @@ public class MyArtist {
 
     }
 
+    /** Takes a string that is formatted as a date using dashes in the format
+     * YEAR-MONTH-DAY, where each substring is a numeric value. For instance, 1999-11-19 is a
+     * valid date. Note that, for our purposes, a given String may not have full precision, so it
+     * may be missing the month and day, which is okay.
+     * @param date A date of the form YEAR-MONTH-DAY.
+     */
+    // TODO: verify how spotify formats release date.
+    private Calendar parseDate (String date){
+        throw new UnsupportedOperationException();
+    }
 
     /**
      * Helper method for MyArtist's constructor. Sets the albums field of this artist object.
      */
     private void setAlbums() {
         System.out.println("Hello, World!");
+        // TODO: set size and use get artist albums.
     }
 
 

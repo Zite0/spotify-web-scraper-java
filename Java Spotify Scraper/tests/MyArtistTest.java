@@ -32,6 +32,5 @@ public class MyArtistTest {
         assertThrows(NoResultException.class, () -> new MyArtist("mlaasidnaasdsd"));
 
 
-
     }
 }
