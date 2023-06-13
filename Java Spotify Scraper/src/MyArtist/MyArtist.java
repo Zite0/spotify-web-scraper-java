@@ -83,6 +83,46 @@ public class MyArtist {
         setAlbums();
     }
 
+    /** Takes a string that must be formatted as a date using dashes in the format
+     * YEAR-MONTH-DAY, where each substring is a numeric value. For instance, 1999-11-19 is a
+     * valid date. Note that, for our purposes, a given String may not have full precision, so it
+     * may be missing the month and day, which is okay. If the string contains no month, then
+     * January is used by default. If it contains no day, the first of the month is used.
+     * ----
+     * Requires that the second substring be a substring be a number between 1 and 12,
+     * non-inclusive, and that the third be a number between 1 and 31, inclusive.
+     * Years must be numbers greater than 0 and cannot be omitted.
+     * Precision must be reduced in the order of day and then month.
+     * @param date A date of the form YEAR-MONTH-DAY.
+     * @throws NumberFormatException if the substrings are not numeric.
+     */
+    public static Calendar parseDate (String date){
+        // Spotify API uses dashes to separate date, so we use String.split()
+        String[] section = date.split("-");
+
+        try{
+            switch (section.length) {
+                case 1 -> {
+                    return new GregorianCalendar(Integer.parseInt(section[0])
+                            , Calendar.JANUARY, 1);
+                }
+                case 2 -> {
+                    return new GregorianCalendar(Integer.parseInt(section[0])
+                            , Integer.parseInt(section[1]) - 1, 1);
+                }
+                case 3 -> {
+                    return new GregorianCalendar(Integer.parseInt(section[0])
+                            , Integer.parseInt(section[1]) - 1, Integer.parseInt(section[2]));
+                }
+            }
+        }
+        catch (NumberFormatException e) {
+            throw new NumberFormatException("String could not be converted to an integer.");
+        }
+        // Should be unreachable if preconditions are met.
+        return null;
+    }
+
     /**
      * Returns this artist's name.
      */
@@ -140,7 +180,7 @@ public class MyArtist {
         } catch (IOException | SpotifyWebApiException | ParseException e) {
             throw new RuntimeException(e);
         }
-        
+
     }
 
     /**
@@ -170,22 +210,13 @@ public class MyArtist {
 
     }
 
-    /** Takes a string that is formatted as a date using dashes in the format
-     * YEAR-MONTH-DAY, where each substring is a numeric value. For instance, 1999-11-19 is a
-     * valid date. Note that, for our purposes, a given String may not have full precision, so it
-     * may be missing the month and day, which is okay.
-     * @param date A date of the form YEAR-MONTH-DAY.
-     */
-    // TODO: verify how spotify formats release date.
-    private Calendar parseDate (String date){
-        throw new UnsupportedOperationException();
-    }
-
     /**
      * Helper method for MyArtist's constructor. Sets the albums field of this artist object.
      */
     private void setAlbums() {
         System.out.println("Hello, World!");
+
+        Arrays.sort(albums);
         // TODO: set size and use get artist albums.
     }
 

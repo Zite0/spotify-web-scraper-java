@@ -20,7 +20,7 @@ import se.michaelthelin.spotify.requests.data.artists.GetArtistsAlbumsRequest;
  * which contain useful yet needless features that would make developing the functionality
  * of the entire scraper too complicated.
  */
-class MyAlbum{
+class MyAlbum implements Comparable<MyAlbum>{
 
     /** String containing the id 'id' of this album. */
     private final String id;
@@ -91,10 +91,19 @@ class MyAlbum{
        return albumType;
     }
 
-    /** Returns this album's release date. */
+    /** Returns this album's release date as a string. */
     public Calendar getReleaseDate(){
         return releaseDate;
     }
+
+    /** Compares two MyAlbum objects; this comparison is made based on this album's release date.
+     * @return the value 0 if this album was released on the same date as 'other'; a value less
+     * than 0 if this album was released before 'other'; otherwise, a value greater than 0. */
+    @Override
+    public int compareTo(MyAlbum other){
+        return this.releaseDate.compareTo(other.releaseDate);
+    }
+
     /** Requests this album's tracks and sets the 'tracks' field. */
     private void searchTracks() throws IOException, ParseException, SpotifyWebApiException {
         // Instantiates a GetArtistsAlbumsRequest to request album tracks.

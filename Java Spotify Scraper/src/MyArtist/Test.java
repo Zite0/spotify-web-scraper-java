@@ -53,8 +53,6 @@ public class Test {
          .build();
 
 
-
-
         try {
 
             SearchResult result = searchItemRequest.execute();

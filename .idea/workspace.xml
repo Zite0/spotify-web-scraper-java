@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83955593-e83f-4abc-b631-4629dada4c2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/RequestCreator/ConcurrentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/RequestCreator/SequentialRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java Spotify Scraper/tests/SequentialRequestTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/Constants.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyAlbum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyAlbum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MyArtist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MySingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/MySingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/src/MyArtist/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java Spotify Scraper/tests/MyArtistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java Spotify Scraper/tests/MyArtistTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +48,23 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="MyArtistTest.parseDateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify-web-scraper-java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyArtistTest" />
+      <option name="METHOD_NAME" value="parseDateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyArtistTest.parseDateTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
